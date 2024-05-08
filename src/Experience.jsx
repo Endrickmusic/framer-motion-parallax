@@ -1,17 +1,28 @@
+import { useRef } from "react"
 import { MeshStandardMaterial, BoxGeometry, Mesh } from "three"
 import { OrbitControls, useTexture } from "@react-three/drei"
-import { extend } from "@react-three/fiber"
+import { extend, useFrame } from "@react-three/fiber"
 
 extend({ MeshStandardMaterial, BoxGeometry, Mesh })
+
+
 
 export default function Experience(){
 
   const normalMap = useTexture('./textures/waternormals.jpeg')
 
+  const boxRef = useRef()
+
+  useFrame(({ clock }) => {
+    const time = clock.getElapsedTime()
+    boxRef.current.rotation.y = time
+  })
+
   return (
     <>
       <OrbitControls />       
         <mesh
+        ref={boxRef}
         rotation={[Math.PI/4, Math.PI/4, Math.PI/2]}
         position={[0, 0, 0]}
         >

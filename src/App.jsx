@@ -20,7 +20,7 @@ export default function App() {
           <MultiLayerParallax />
       </div>
       
-      <div className="relative w-full h-full z-30">
+      <div className="relative w-full h-screen z-30">
         <MotionCanvas shadows camera={{ position: [0, 0, 4], fov: 40 }}>
       
           <Environment
@@ -34,7 +34,7 @@ export default function App() {
 
    
 
-    <div className="relative w-full z-30">    
+    <div className="relative z-30">    
       <p className="max-w-lg space-y-4 space-x-4 mx-auto my-6 text-xl">
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
       Aenean commodo ligula eget dolor. Aenean massa. 
