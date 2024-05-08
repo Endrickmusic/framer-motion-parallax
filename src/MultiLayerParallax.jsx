@@ -11,12 +11,14 @@ export default function MultiLayerParallax() {
 
     const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
     const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
+    const cloudY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"])
 
     return (
-        <div className='w-full h-screen overflow-hidden relative grid place-items-center'>
+        <div className='w-full h-screen overflow-hidden relative grid place-items-center'
+        style={{ height: '170vh' }}>
             <motion.h1 
             style={{ y: textY }}
-            className='text-7xl font-bold text-white md:text-9xl relative z-40 mt-[-450px]'>
+            className='text-9xl font-bold text-white md:text-9xl relative z-40 mt-[-850px]'>
                 PARALLAX
             </motion.h1>
 
@@ -30,14 +32,15 @@ export default function MultiLayerParallax() {
             >
             </motion.div>
 
-            <div className="absolute inset-0 z-50"
+            <motion.div className="absolute inset-0 z-50"
             style={{
                 backgroundImage: 'url(./images/clouds_alpha.png)',
-                backgroundSize: '100% 100%',
-                backgroundPosition: 'top',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center bottom',
+                y: cloudY
             }}
             >
-            </div>
+            </motion.div>
         </div>
    )
 }            

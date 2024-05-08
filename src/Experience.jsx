@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { MeshStandardMaterial, BoxGeometry, Mesh } from "three"
-import { OrbitControls, useTexture } from "@react-three/drei"
+import { useTexture } from "@react-three/drei"
 import { extend, useFrame } from "@react-three/fiber"
 
 extend({ MeshStandardMaterial, BoxGeometry, Mesh })
@@ -19,8 +19,7 @@ export default function Experience(){
   })
 
   return (
-    <>
-      <OrbitControls />       
+    <>    
         <mesh
         ref={boxRef}
         rotation={[Math.PI/4, Math.PI/4, Math.PI/2]}
