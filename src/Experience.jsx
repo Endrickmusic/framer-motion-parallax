@@ -1,5 +1,8 @@
+import { MeshStandardMaterial, BoxGeometry, Mesh } from "three"
 import { OrbitControls, useTexture } from "@react-three/drei"
-import { } from "@react-three/fiber"
+import { extend } from "@react-three/fiber"
+
+extend({ MeshStandardMaterial, BoxGeometry, Mesh })
 
 export default function Experience(){
 
